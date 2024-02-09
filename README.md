@@ -1,1 +1,1 @@
-# RV32I_5-Stage_Pipelined_CPU
+# RV32I 5-Stage Pipelined CPU
