@@ -20,4 +20,9 @@ module tb_top;
         #1000 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump.vcd");
+        $dumpvars();
+    end
+
 endmodule

@@ -15,5 +15,10 @@ module tb_rom;
         #10 instruction_memory_address = 123;
         #50 $finish;
     end
+
+    initial begin
+        $dumpfile("./temp/dump_rom.vcd");
+        $dumpvars();
+    end
     
 endmodule

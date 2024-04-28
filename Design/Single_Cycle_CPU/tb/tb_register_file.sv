@@ -34,4 +34,9 @@ module tb_register_file;
         #100 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_register_file.vcd");
+        $dumpvars();
+    end
+
 endmodule

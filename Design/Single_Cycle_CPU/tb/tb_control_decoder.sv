@@ -65,4 +65,9 @@ module tb_control_decoder;
         #10 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_control_decoder.vcd");
+        $dumpvars();
+    end
+
 endmodule

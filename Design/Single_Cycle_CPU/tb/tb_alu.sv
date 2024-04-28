@@ -28,4 +28,9 @@ module tb_alu;
         #100 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_alu.vcd");
+        $dumpvars();
+    end
+
 endmodule

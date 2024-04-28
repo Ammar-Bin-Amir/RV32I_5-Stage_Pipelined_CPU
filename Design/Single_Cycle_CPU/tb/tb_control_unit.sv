@@ -42,4 +42,9 @@ module tb_control_unit;
         #10 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_control_unit.vcd");
+        $dumpvars();
+    end
+
 endmodule

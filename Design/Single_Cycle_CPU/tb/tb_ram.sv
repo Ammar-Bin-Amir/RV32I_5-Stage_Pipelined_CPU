@@ -31,4 +31,9 @@ module tb_ram;
         #100 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_ram.vcd");
+        $dumpvars();
+    end
+
 endmodule

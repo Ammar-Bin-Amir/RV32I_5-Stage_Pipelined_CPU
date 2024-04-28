@@ -25,4 +25,9 @@ module tb_program_counter;
         #10 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_program_counter.vcd");
+        $dumpvars();
+    end
+
 endmodule

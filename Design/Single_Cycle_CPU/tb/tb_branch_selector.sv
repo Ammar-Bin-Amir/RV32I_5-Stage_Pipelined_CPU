@@ -28,4 +28,9 @@ module tb_branch_selector;
         #100 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_branch_selector.vcd");
+        $dumpvars();
+    end
+
 endmodule

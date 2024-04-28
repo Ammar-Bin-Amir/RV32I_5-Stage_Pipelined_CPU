@@ -27,4 +27,9 @@ module tb_immediate_generator;
         #100 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_immediate_generator.vcd");
+        $dumpvars();
+    end
+
 endmodule

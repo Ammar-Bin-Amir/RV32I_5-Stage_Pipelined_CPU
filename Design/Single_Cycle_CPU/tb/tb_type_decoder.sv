@@ -42,4 +42,9 @@ module tb_type_decoder;
         #10 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_type_decoder.vcd");
+        $dumpvars();
+    end
+
 endmodule
