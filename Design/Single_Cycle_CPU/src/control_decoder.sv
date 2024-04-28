@@ -49,8 +49,6 @@ module control_decoder (
     assign next_pc_selector[1] = (sb_type | uj_type);
 
     // ALU Operations Selector
-    logic [2:0] alu_operations_selector;
-
     assign alu_operations_selector[0] = (s_type | u_type_auipc | u_type_lui | uj_type);
     assign alu_operations_selector[1] = (i_type_addi | i_type_jalr | u_type_lui | uj_type);
     assign alu_operations_selector[2] = (i_type_lw | i_type_jalr | u_type_auipc | uj_type);
