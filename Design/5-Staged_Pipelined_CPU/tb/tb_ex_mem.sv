@@ -1,7 +1,4 @@
 module tb_ex_mem;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic [31:0] pc_ex;
@@ -77,6 +74,11 @@ module tb_ex_mem;
             jump_sb_type_ex = $random;
         end
         #25ns $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_ex_mem.vcd");
+        $dumpvars();
     end
 
 endmodule

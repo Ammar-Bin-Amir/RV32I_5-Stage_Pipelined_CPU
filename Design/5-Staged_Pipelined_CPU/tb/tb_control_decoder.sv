@@ -1,8 +1,5 @@
 module tb_control_decoder;
     
-    timeunit 1ns;
-    timeprecision 1ps;
-    
     logic r_type;
     logic i_type_lw;
     logic i_type_addi;
@@ -63,6 +60,11 @@ module tb_control_decoder;
         #10 r_type = 1'b0; i_type_lw = 1'b0; i_type_addi = 1'b0; i_type_jalr = 1'b0; s_type = 1'b0; sb_type = 1'b0; u_type_auipc = 1'b0; u_type_lui = 1'b0; uj_type = 1'b0;
         #10 r_type = 1'b0; i_type_lw = 1'b0; i_type_addi = 1'b0; i_type_jalr = 1'b0; s_type = 1'b0; sb_type = 1'b0; u_type_auipc = 1'b0; u_type_lui = 1'b0; uj_type = 1'b0;
         #10 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_control_decoder.vcd");
+        $dumpvars();
     end
 
 endmodule

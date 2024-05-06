@@ -1,8 +1,5 @@
 module tb_alu;
     
-    timeunit 1ns;
-    timeprecision 1ps;
-    
     logic [31:0] operand_a;
     logic [31:0] operand_b;
     logic [3:0] alu_controller;
@@ -26,6 +23,11 @@ module tb_alu;
             #10 alu_controller = i;
         end
         #100 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_alu.vcd");
+        $dumpvars();
     end
 
 endmodule

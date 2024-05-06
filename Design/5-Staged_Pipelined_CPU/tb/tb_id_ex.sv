@@ -1,7 +1,4 @@
 module tb_id_ex;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic [31:0] pc_id;
@@ -112,6 +109,11 @@ module tb_id_ex;
             immediate_id = $random;
         end
         #25ns $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_id_ex.vcd");
+        $dumpvars();
     end
 
 endmodule

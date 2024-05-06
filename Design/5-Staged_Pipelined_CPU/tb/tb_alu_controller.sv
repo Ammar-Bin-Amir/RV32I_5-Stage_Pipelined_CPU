@@ -23,4 +23,9 @@ module tb_alu_controller;
         #10 $finish;
     end
 
+    initial begin
+        $dumpfile("./temp/dump_alu_controller.vcd");
+        $dumpvars();
+    end
+
 endmodule

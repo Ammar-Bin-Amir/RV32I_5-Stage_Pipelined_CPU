@@ -1,7 +1,4 @@
 module tb_if_id;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic [31:0] pc_if;
@@ -62,6 +59,11 @@ module tb_if_id;
             im_data_if = $random;
         end
         #25ns $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_if_id.vcd");
+        $dumpvars();
     end
 
 endmodule

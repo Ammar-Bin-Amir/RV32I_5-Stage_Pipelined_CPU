@@ -1,7 +1,4 @@
 module tb_control_unit;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic [6:0] opcode;
     logic write;
@@ -40,6 +37,11 @@ module tb_control_unit;
         #10 opcode = 7'h6f;
         #10 opcode = 7'hff;
         #10 $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_control_unit.vcd");
+        $dumpvars();
     end
 
 endmodule

@@ -1,7 +1,4 @@
 module tb_mem_wb;
-    
-    timeunit 1ns;
-    timeprecision 1ps;
 
     logic clk;
     logic [4:0] rd_mem;
@@ -42,6 +39,11 @@ module tb_mem_wb;
             dm_data_mem = $random;
         end
         #25ns $finish;
+    end
+
+    initial begin
+        $dumpfile("./temp/dump_mem_wb.vcd");
+        $dumpvars();
     end
 
 endmodule
