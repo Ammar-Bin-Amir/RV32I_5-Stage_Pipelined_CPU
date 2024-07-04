@@ -1,0 +1,58 @@
+module control_unit (
+    input  logic [6:0] opcode,
+    output logic       write,
+    output logic       store,
+    output logic       load,
+    output logic       branch,
+    output logic [1:0] alu_operand_a_selector,
+    output logic       alu_operand_b_selector,
+    output logic [1:0] immediate_selector,
+    output logic [1:0] next_pc_selector,
+    output logic [2:0] alu_operations_selector
+);
+    
+    logic r_type;
+    logic i_type_lw;
+    logic i_type_addi;
+    logic i_type_jalr;
+    logic s_type;
+    logic sb_type;
+    logic u_type_auipc;
+    logic u_type_lui;
+    logic uj_type;
+    
+    type_decoder dut_type_decoder (
+        .opcode,
+        .r_type,
+        .i_type_lw,
+        .i_type_addi,
+        .i_type_jalr,
+        .s_type,
+        .sb_type,
+        .u_type_auipc,
+        .u_type_lui,
+        .uj_type
+    );
+
+    control_decoder dut_control_decoder (
+        .r_type,
+        .i_type_lw,
+        .i_type_addi,
+        .i_type_jalr,
+        .s_type,
+        .sb_type,
+        .u_type_auipc,
+        .u_type_lui,
+        .uj_type,
+        .write,
+        .store,
+        .load,
+        .branch,
+        .alu_operand_a_selector,
+        .alu_operand_b_selector,
+        .immediate_selector,
+        .next_pc_selector,
+        .alu_operations_selector
+    );
+
+endmodule : control_unit

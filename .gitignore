@@ -3,7 +3,6 @@
 *.pb
 .*.timestamp
 *.wdb
-*.wcfg
 *.str
 xsim.dir
 .Xil
